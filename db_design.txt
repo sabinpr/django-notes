@@ -1,0 +1,20 @@
+# Db Design
+
+# NoteType
+ -id(Primay Key - PK)
+ -name(Char)
+
+# Note
+ -id(Primay Key - PK)
+ -name(Char)
+ -discription(Char)
+ -type(Relation,NoteType,Fk)
+ -user(Relation,User,Fk)
+
+# User(django user table)
+ -
+
+# RElationship type
+ - One to One
+ - One to Many
+ - Many to Many
