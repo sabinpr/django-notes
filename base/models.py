@@ -16,3 +16,6 @@ class Note(models.Model):
     description = models.TextField()
     type = models.ForeignKey(NoteType, on_delete=models.SET_NULL, null=True)
     user = models.ForeignKey(User, on_delete=models.CASCADE, null=True)
+
+    def __str__(self):
+        return self.name
