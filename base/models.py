@@ -15,4 +15,4 @@ class Note(models.Model):
     name = models.CharField(max_length=200)
     description = models.TextField()
     type = models.ForeignKey(NoteType, on_delete=models.SET_NULL, null=True)
-    user = models.ForeignKey(User, on_delete=models.CASCADE)
+    user = models.ForeignKey(User, on_delete=models.CASCADE, null=True)
