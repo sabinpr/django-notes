@@ -16,7 +16,38 @@
       crossorigin="anonymous"
     ></script>
   </head>
-  <body></body>
+  <body>
+    <form>
+      <div class="form-group">
+        <label for="noteName">Name</label>
+        <input
+          type="text"
+          class="form-control"
+          id="notename"
+          placeholder="Enter Note Name"
+        />
+      </div>
+      <div class="form-group">
+        <label for="noteDescription">Description</label>
+        <input
+          type="text"
+          class="form-control"
+          id="noteDescription"
+          placeholder="Enter Note Description"
+        />
+      </div>
+      <div class="form-group">
+        <label for="noteType">Note type</label>
+        <select id="noteType" class="form-select">
+          <option selected>Select Note Type</option>
+          <option value="1">Important</option>
+          <option value="2">Not Important</option>
+          <option value="3">Very Important</option>
+        </select>
+      </div>
+      <button type="submit" class="btn btn-primary">Add Note</button>
+    </form>
+  </body>
   <script
     src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
     integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"

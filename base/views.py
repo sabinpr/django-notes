@@ -16,3 +16,7 @@ def notetype_view(request):
     notetype_obj = NoteType.objects.all().order_by('id')
     note_data = {"notetypes": notetype_obj}
     return render(request, 'notetype.html', context=note_data)
+
+
+def create_note(request):
+    return render(request, 'createnote.html')

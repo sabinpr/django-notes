@@ -18,9 +18,11 @@ from django.contrib import admin
 from django.urls import path
 from base.views import home_view
 from base.views import notetype_view
+from base.views import create_note
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', home_view),
-    path('notetype/', notetype_view)
+    path('notetype/', notetype_view),
+    path('createnote/', create_note)
 ]
