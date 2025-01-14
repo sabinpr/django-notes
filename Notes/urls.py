@@ -20,9 +20,9 @@ from base.views import create_note, success, notetype_view, home_view, create_no
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', home_view),
-    path('notetype/', notetype_view),
+    path('', home_view, name='home'),
+    path('notetype/', notetype_view, name='notetype_view'),
     path('createnote/', create_note),
-    path('success/', success, name='success'),
+    path('success/', success, name='home'),
     path('create_note_type/', create_note_type)
 ]

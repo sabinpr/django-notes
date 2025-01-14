@@ -38,7 +38,7 @@ def create_note_type(request):
         form = NoteTypeForm(request.POST)
         if form.is_valid():
             form.save()
-            return redirect('success')
+            return redirect('notetype_view')
     else:
         form = NoteTypeForm()
     return render(request, 'create_note_type.html', {'form': form})
