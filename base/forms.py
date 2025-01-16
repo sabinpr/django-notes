@@ -9,7 +9,7 @@ class NoteForm(forms.ModelForm):
         widgets = {
             'name': forms.TextInput(attrs={'class': 'form-control', 'placeholder': 'Enter Note Name', 'id': 'Name'}),
             'description': forms.Textarea(attrs={'class': 'form-control', 'placeholder': 'Enter Description', 'id': 'Description', 'rows': 4}),
-            'type': forms.Select(attrs={'class': 'form-control', 'id': 'Type'})
+            'type': forms.Select(attrs={'class': 'form-select', 'id': 'Type'})
         }
 
 

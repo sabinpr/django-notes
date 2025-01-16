@@ -18,6 +18,23 @@
   </head>
   <body>
     <div class="container mt-5">
+      {% if messages %}
+      {% for message in messages %}
+      {% if message.tags == "success" %}
+      <div class="alert alert-success alert-dismissible fade show" role="alert">
+        {{message}}<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+          
+      </div>
+      {% elif message.tags == "error" %}
+      <div class="alert alert-danger alert-dismissible fade show" role="alert">
+        {{message}}<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+          
+      </div>
+      {%endif%}
+
+      
+      {%endfor%}
+      {%endif%}
       <table class="table table-striped">
         <thead>
           <tr>
@@ -25,6 +42,7 @@
             <th scope="col">Name</th>
             <th scope="col">Description</th>
             <th scope="col">Type</th>
+            <th scope="col">Action</th>
           </tr>
         </thead>
         <tbody>
@@ -34,6 +52,7 @@
             <td>{{note.name}}</td>
             <td>{{note.description}}</td>
             <td>{{note.type}}</td>
+            <td><a href="{% url 'edit_note' pk=note.id %}" class="btn btn-warning">Edit</a> <a href="{% url 'delete_note' pk=note.id %}" class="btn btn-danger">delete</a></td>
           </tr>
           {% endfor %}
         </tbody>

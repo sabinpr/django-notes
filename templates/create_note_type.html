@@ -17,16 +17,18 @@
     ></script>
   </head>
   <body>
-    {% load widget_tweaks %}
-    <form method="post">
-      {% csrf_token %}
-      <div class="form-group mb-3">
-        <label for="Name" class="form-control">Name</label>
-        {{form.name}}
-      </div>
+    <div class="container mt-5">
+      {% load widget_tweaks %}
+      <form method="post">
+        {% csrf_token %}
+        <div class="form-group mb-3">
+          <label for="Name" class="form-control">Name</label>
+          {{form.name}}
+        </div>
 
-      <button type="submit" class="btn btn-primary">Add Note Type</button>
-    </form>
+        <button type="submit" class="btn btn-primary">Add Note Type</button>
+      </form>
+    </div>
   </body>
   <script
     src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
