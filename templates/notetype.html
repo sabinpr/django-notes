@@ -41,13 +41,16 @@
             <th scope="row">{{forloop.counter}}</th>
             <td>{{notetype.name}}</td>
             <td>
-              <a href="{% url 'delete_notetype' pk=notetype.id %}" class="btn btn-danger">delete</a>
+              <a href="{% url 'edit_notetype' pk=notetype.id %}" class="btn btn-warning">Edit</a>
+              <a href="{% url 'delete_notetype' pk=notetype.id %}" class="btn btn-danger">Delete</a>
             </td>
           </tr>
           {% endfor %}
         </tbody>
       </table>
       <a href="\create_note_type" class="btn btn-primary"> Create New Notetype</a>
+      
+      <a href="\delete_all_notetype" class="btn btn-danger"> Delete All Notetype</a>
       
     </div>
     </div>

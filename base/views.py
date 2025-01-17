@@ -55,7 +55,7 @@ def edit_note_view(request, pk):
         note_form_obj = NoteForm(data=request.POST, instance=note_obj)
         if note_form_obj.is_valid():
             note_form_obj.save()
-            messages.success(request, 'note type Updated!')
+            messages.success(request, 'note Updated!')
             return redirect('home')
         else:
             messages.error(request, note_form_obj.errors)
@@ -73,8 +73,40 @@ def delete_note_view(request, pk):
     return redirect('home')
 
 
+def edit_notetype_view(request, pk):
+    notetype_obj = NoteType.objects.get(id=pk)
+    if request.method == "POST":
+        notetype_form_obj = NoteTypeForm(
+            data=request.POST, instance=notetype_obj)
+        if notetype_form_obj.is_valid():
+            notetype_form_obj.save()
+            messages.success(request, 'notetype Updated!')
+            return redirect('notetype')
+        else:
+            messages.error(request, notetype_form_obj.errors)
+    notetype_form_obj = NoteForm(instance=notetype_obj)
+    data = {'form': notetype_form_obj}
+    return render(request, 'edit_notetype.html', context=data)
+
+
 def delete_notetype_view(request, pk):
     notetype_obj = NoteType.objects.get(id=pk)
     notetype_obj.delete()
     messages.success(request, 'notetype deleted!')
+    return redirect('notetype')
+
+
+def delete_all_view(request):
+    note_obj = Note.objects.all()
+    note_obj.delete()
+
+    messages.success(request, 'All Notes Deleted!')
+    return redirect('home')
+
+
+def delete_all_notetype_view(request):
+    notetype_obj = NoteType.objects.all()
+    notetype_obj.delete()
+
+    messages.success(request, 'All Notetypes Deleted!')
     return redirect('notetype')
